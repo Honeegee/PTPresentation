@@ -309,11 +309,12 @@
             </div>
 
             <ul>
-                <li>❌ No login protection or user identification</li>
-                <li>❌ No role-based access control</li>
-                <li>❌ No session persistence across devices</li>
-                <li>❌ Vulnerable to security threats</li>
-                <li>❌ Single interface for all user types</li>
+                    <li>❌ No login protection or user identification</li>
+                    <li>❌ No social login options (Google, etc.)</li>
+                    <li>❌ No role-based access control</li>
+                    <li>❌ No session persistence across devices</li>
+                    <li>❌ Vulnerable to security threats</li>
+                    <li>❌ Single interface for all user types</li>
             </ul>
         </div>
 
@@ -389,7 +390,7 @@
                 
                 <div class="tech-item">
                     <h5>🛡️ Advanced Security</h5>
-                    <p>Implemented JWT authentication, 2FA support, and rate limiting</p>
+                    <p>Implemented JWT authentication, Google OAuth, bcrypt hashing (12 rounds), 2FA support, and rate limiting</p>
                 </div>
                 
                 <div class="tech-item">
@@ -429,7 +430,8 @@
                 <div class="after">
                     <h4>✅ AFTER</h4>
                     <ul>
-                        <li>Secure login with JWT tokens and 2FA</li>
+                        <li>Secure login with JWT tokens and Google OAuth</li>
+                        <li>Bcrypt password hashing (12 rounds)</li>
                         <li>Comprehensive validation with friendly error messages</li>
                         <li>Full platform resilience and database sync</li>
                         <li>Distinct admin/customer dashboards</li>
@@ -544,6 +546,11 @@
                 </div>
                 
                 <div class="tech-item">
+                    <h5>🔑 Authentication</h5>
+                    <p>JWT tokens, Google OAuth, bcrypt hashing (12 rounds), and session management</p>
+                </div>
+                
+                <div class="tech-item">
                     <h5>🗄️ PostgreSQL Database</h5>
                     <p>Connection pooling, multi-tenant architecture, and data isolation</p>
                 </div>
@@ -556,6 +563,32 @@
 
             <div class="demo-box">
                 <p><strong>Code References:</strong> lib/auth.ts, lib/validation.ts, app/api/auth/ endpoints demonstrate enterprise-grade implementation.</p>
+            </div>
+        </div>
+
+        <!-- Slide 10.5: Google Auth & Bcrypt -->
+        <div class="slide">
+            <h2>🔐 Google Auth & Bcrypt Security</h2>
+            <h3>Enhanced Authentication Features</h3>
+
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <h5>🔵 Google OAuth Integration</h5>
+                    <p>Secure social login with Google Identity Services</p>
+                    <p>One-click signup/login for better UX</p>
+                    <p>Verified email addresses from Google</p>
+                </div>
+                
+                <div class="tech-item">
+                    <h5>🔒 Bcrypt Password Hashing</h5>
+                    <p>12 salt rounds for maximum security</p>
+                    <p>Protection against rainbow table attacks</p>
+                    <p>Slow hashing to prevent brute force</p>
+                </div>
+            </div>
+
+            <div class="demo-box">
+                <p><strong>Security Benefits:</strong> Google Auth reduces password fatigue while bcrypt ensures stored credentials are protected even if database is compromised.</p>
             </div>
         </div>
 
@@ -575,7 +608,7 @@
             </div>
 
             <div class="reflection-box">
-                <h4>📈 Team growth from Milestone 1 to 2:</h4>
+                <h4>� Team growth from Milestone 1 to 2:</h4>
                 <p>"We've significantly improved our collaboration discipline—practicing better version control, effective asynchronous check-ins, and using tools like Docker and Postman to streamline teamwork."</p>
             </div>
         </div>
@@ -625,7 +658,7 @@
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
+        const totalSlides = document.querySelectorAll('.slide').length;
         let startTime = Date.now();
 
         // Update slide counter
